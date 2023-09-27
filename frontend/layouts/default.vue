@@ -1,10 +1,3 @@
-<script setup lang="ts">
-import { MoonIcon, SunIcon } from "@heroicons/vue/24/solid";
-import { ShoppingCartIcon } from "@heroicons/vue/24/outline";
-
-const { isDark, toggleDark } = useTheme();
-</script>
-
 <template>
   <div
     class="font-app h-full transition-all duration-300 text-slate-700 ease-out dark:text-white dark:bg-slate-900"
@@ -22,9 +15,3 @@ const { isDark, toggleDark } = useTheme();
     </div>
   </div>
 </template>
-
-<style>
-.router-link-active {
-  @apply text-green-500;
-}
-</style>
