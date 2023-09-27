@@ -4,6 +4,9 @@ export default {
   content: [],
   theme: {
     extend: {},
+    fontFamily: {
+      app: ["Inter", "system-ui", "sans-serif"],
+    },
   },
   plugins: [],
 };
