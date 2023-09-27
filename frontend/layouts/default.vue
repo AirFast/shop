@@ -16,7 +16,7 @@ const { isDark, toggleDark } = useTheme();
       <main class="flex-1 my-6">
         <slot />
       </main>
-      <footer class="my-6">
+      <footer class="flex justify-between items-center gap-4 my-6">
         <Footer />
       </footer>
     </div>
