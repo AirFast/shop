@@ -31,10 +31,10 @@ const goBack = () => {
 
   <ul class="flex gap-4">
     <li>
-      <IconButton v-if="currentRoute.name === 'cart'" @click="goBack">
+      <IconButton v-if="currentRoute.name === 'cart'" @click="goBack"  title="Close my shopping cart">
         <XMarkIcon class="w-6 h-6" />
       </IconButton>
-      <NuxtLink v-else to="/cart">
+      <NuxtLink v-else to="/cart" title="View my shopping cart">
         <IconButton class="relative">
           <span
             class="w-6 h-6 absolute -top-2 -right-3 flex items-center justify-center rounded-full ring-4 ring-green-500/30 bg-green-500 text-white text-xs/none font-medium"

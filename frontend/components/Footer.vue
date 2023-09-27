@@ -8,7 +8,10 @@ const { isDark, toggleDark } = useTheme();
 <template>
   <p class="text-xs">&copy; Shop, {{ year }}</p>
   <ClientOnly>
-    <IconButton @click="toggleDark()">
+    <IconButton
+      @click="toggleDark()"
+      :title="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
+    >
       <SunIcon v-if="isDark" class="w-6 h-6" />
       <MoonIcon v-else class="w-6 h-6" />
     </IconButton>
