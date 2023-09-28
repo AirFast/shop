@@ -6,13 +6,13 @@ export default defineNuxtConfig({
     locales: [
       {
         code: "en",
-        iso: "en-EN",
+        iso: "en",
         dir: "ltr",
         file: "en.ts",
       },
       {
         code: "uk",
-        iso: "uk-UK",
+        iso: "uk",
         dir: "ltr",
         file: "uk.ts",
       },

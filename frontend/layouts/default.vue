@@ -1,17 +1,10 @@
 <script setup lang="ts">
-const { setLocale } = useI18n();
-const userStorage = useUserStorage();
-
 const head = useLocaleHead({
   addDirAttribute: true,
   addSeoAttributes: true,
 });
 
 const htmlAttrs = computed(() => head.value.htmlAttrs!);
-
-onBeforeMount(() => {
-  setLocale(userStorage.value.lang);
-});
 </script>
 
 <template>

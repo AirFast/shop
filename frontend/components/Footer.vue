@@ -2,13 +2,8 @@
 import { LocaleObject } from "@nuxtjs/i18n/dist/runtime/composables";
 import { LanguageIcon, MoonIcon, SunIcon } from "@heroicons/vue/24/solid";
 
-const { push } = useRouter();
-const switchLocalePath = useSwitchLocalePath();
-
-const { locale, locales } = useI18n();
+const { locale, locales, setLocale } = useI18n();
 const { isDark, toggleDark } = useTheme();
-
-const userStorage = useUserStorage();
 
 const availableLocales = (locales.value as Array<LocaleObject>).map(
   ({ code }) => code
@@ -26,8 +21,7 @@ const nextLangCode = computed(
 );
 
 const toggleLang = () => {
-  push({ path: switchLocalePath(nextLangCode.value) });
-  userStorage.value.lang = nextLangCode.value;
+  setLocale(nextLangCode.value);
 };
 </script>
 
