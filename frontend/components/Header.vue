@@ -17,7 +17,7 @@ const goBack = () => {
       <li>
         <NuxtLink
           :to="localePath('/')"
-          class="transition-all font-semibold hover:text-green-500 p-2"
+          class="transition-all text-sm md:text-base font-semibold hover:text-green-500 p-2"
         >
           {{ $t("menu.home") }}
         </NuxtLink>
@@ -25,7 +25,7 @@ const goBack = () => {
       <li>
         <NuxtLink
           :to="localePath('/products')"
-          class="transition-all font-semibold hover:text-green-500 p-2"
+          class="transition-all text-sm md:text-base font-semibold hover:text-green-500 p-2"
         >
           {{ $t("menu.products") }}
         </NuxtLink>
@@ -40,16 +40,16 @@ const goBack = () => {
         @click="goBack"
         :title="$t('closeCart')"
       >
-        <XMarkIcon class="w-6 h-6" />
+        <XMarkIcon class="w-5 h-5 md:w-6 md:h-6" />
       </IconButton>
       <NuxtLink v-else :to="localePath('/cart')" :title="$t('openCart')">
         <IconButton class="relative">
           <span
-            class="w-6 h-6 absolute -top-2 -right-3 flex items-center justify-center rounded-full ring-4 ring-green-500/30 bg-green-500 text-white text-xs/none font-medium"
+            class="w-5 h-5 md:w-6 md:h-6 absolute -top-2 -right-3 flex items-center justify-center rounded-full ring-4 ring-green-500/30 bg-green-500 text-white text-xs/none font-medium"
           >
             17
           </span>
-          <ShoppingCartIcon class="w-6 h-6" />
+          <ShoppingCartIcon class="w-5 h-5 md:w-6 md:h-6" />
         </IconButton>
       </NuxtLink>
     </li>

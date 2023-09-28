@@ -35,7 +35,7 @@ const toggleLang = () => {
         @click="toggleLang"
         :title="`${$t('switchTo')} ${$t(nextLangCode)}`"
       >
-        <LanguageIcon class="w-6 h-6" />
+        <LanguageIcon class="w-5 h-5 md:w-6 md:h-6" />
       </IconButton>
       <IconButton
         @click="toggleDark()"
@@ -43,8 +43,8 @@ const toggleLang = () => {
           isDark ? $t('lightMode') : $t('darkMode')
         }`"
       >
-        <SunIcon v-if="isDark" class="w-6 h-6" />
-        <MoonIcon v-else class="w-6 h-6" />
+        <SunIcon v-if="isDark" class="w-5 h-5 md:w-6 md:h-6" />
+        <MoonIcon v-else class="w-5 h-5 md:w-6 md:h-6" />
       </IconButton>
     </ClientOnly>
   </div>
