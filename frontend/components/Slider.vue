@@ -2,6 +2,7 @@
 import {
   ArrowSmallLeftIcon,
   ArrowSmallRightIcon,
+  ArrowsPointingOutIcon,
 } from "@heroicons/vue/24/solid";
 
 const { slides } = defineProps<{
@@ -9,12 +10,14 @@ const { slides } = defineProps<{
 }>();
 
 const { currentSlideItem, prev, next } = useSliderNavigation(slides);
+
+const isOpen = ref(false);
+const open = () => (isOpen.value = true);
+const close = () => (isOpen.value = false);
 </script>
 
 <template>
-  <div
-    class="relative group inline-block rounded-lg overflow-hidden w-full"
-  >
+  <div class="relative group inline-block rounded-lg overflow-hidden w-full">
     <NuxtImg
       :src="currentSlideItem.src"
       :alt="currentSlideItem.alt"
@@ -33,5 +36,15 @@ const { currentSlideItem, prev, next } = useSliderNavigation(slides);
     >
       <ArrowSmallRightIcon class="w-5 h-5 md:w-6 md:h-6" />
     </IconButton>
+    <IconButton
+      class="absolute right-5 md:right-6 bottom-5 md:bottom-6 opacity-0 group-hover:opacity-100"
+      @click="open"
+    >
+      <ArrowsPointingOutIcon class="w-5 h-5 md:w-6 md:h-6" />
+    </IconButton>
   </div>
+
+  <Teleport to="body">
+    <PopupSlider v-if="isOpen" :slides="slides" :close="close" />
+  </Teleport>
 </template>
