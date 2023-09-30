@@ -5,12 +5,16 @@ import {
   ArrowSmallRightIcon,
 } from "@heroicons/vue/24/solid";
 
-const { slides } = defineProps<{
+const { slides, activeIndex, close } = defineProps<{
   slides: Slide[];
+  activeIndex?: number;
   close: () => boolean;
 }>();
 
-const { currentSlideItem, prev, next } = useSliderNavigation(slides);
+const { currentSlideItem, isShowNavigation, prev, next } = useSliderNavigation(
+  slides,
+  activeIndex
+);
 </script>
 
 <template>
@@ -22,16 +26,18 @@ const { currentSlideItem, prev, next } = useSliderNavigation(slides);
         :src="currentSlideItem.src"
         :alt="currentSlideItem.alt"
         loading="lazy"
-        class="max-h-[92vh] rounded-lg object-contain"
+        class="h-[92vh] rounded-lg object-contain"
       />
     </div>
     <IconButton
+      v-if="isShowNavigation"
       class="absolute left-6 top-1/2 -mt-5 md:-mt-6 opacity-0 group-hover:opacity-100"
       @click="prev"
     >
       <ArrowSmallLeftIcon class="w-5 h-5 md:w-6 md:h-6" />
     </IconButton>
     <IconButton
+      v-if="isShowNavigation"
       class="absolute right-6 top-1/2 -mt-5 md:-mt-6 opacity-0 group-hover:opacity-100"
       @click="next"
     >

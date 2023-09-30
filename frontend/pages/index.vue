@@ -1,7 +1,7 @@
 <template>
   <div class="grid lg:grid-cols-2 gap-12">
     <div>
-      <div class="sticky top-12 grid gap-6">
+      <div class="sticky top-12 grid gap-4">
         <Gallery />
       </div>
     </div>

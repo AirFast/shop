@@ -1,0 +1,116 @@
+<script setup lang="ts">
+import {
+  ArrowSmallLeftIcon,
+  ArrowSmallRightIcon,
+} from "@heroicons/vue/24/solid";
+
+const { items, activeIndex, setActiveIndex } = defineProps<{
+  items: Slide[];
+  activeIndex?: number;
+  setActiveIndex: (index: number) => void;
+}>();
+
+const carrousel = ref<HTMLDivElement | null>(null);
+const carrouselItem = ref<HTMLDivElement[] | null>(null);
+const isHideLeft = ref(true);
+const isHideRight = ref(true);
+
+const buttonVisibility = () => {
+  if (carrousel.value) {
+    const scrollLeft = carrousel.value.scrollLeft;
+    const scrollWidth = carrousel.value.scrollWidth;
+    const clientWidth = carrousel.value.clientWidth;
+
+    isHideLeft.value = scrollLeft === 0;
+    isHideRight.value = scrollLeft + clientWidth >= scrollWidth;
+  }
+};
+
+const left = () => {
+  if (carrousel.value && carrouselItem.value) {
+    const left =
+      carrousel.value.scrollLeft - carrouselItem.value[1].clientWidth * 2;
+
+    carrousel.value.scrollTo({
+      left,
+      behavior: "smooth",
+    });
+
+    setTimeout(() => buttonVisibility(), 600);
+  }
+};
+
+const right = () => {
+  if (carrousel.value && carrouselItem.value) {
+    const left =
+      carrousel.value.scrollLeft + carrouselItem.value[1].clientWidth * 2;
+
+    carrousel.value.scrollTo({
+      left,
+      behavior: "smooth",
+    });
+
+    setTimeout(() => buttonVisibility(), 600);
+  }
+};
+
+onMounted(() => {
+  setTimeout(() => buttonVisibility(), 100);
+});
+</script>
+
+<template>
+  <div class="relative group">
+    <div
+      ref="carrousel"
+      class="flex gap-2 snap-x snap-mandatory overflow-x-auto no-scrollbar"
+    >
+      <div
+        v-for="(item, index) in items"
+        :key="index"
+        ref="carrouselItem"
+        @click="setActiveIndex(index)"
+        :class="{ 'after:opacity-100': index === activeIndex }"
+        class="relative p-2 snap-center shrink-0 cursor-pointer hover:after:opacity-100 after:duration-200 after:opacity-0 after:border-2 after:border-green-500 after:top-0 after:left-0 after:absolute after:w-48 after:h-36 after:rounded-2xl"
+      >
+        <NuxtImg
+          :src="item.src"
+          :alt="item.alt"
+          loading="lazy"
+          class="w-44 h-32 rounded-lg object-cover"
+        />
+      </div>
+    </div>
+    <IconButton
+      @click="left"
+      :class="{
+        'pointer-events-none': isHideLeft,
+        'group-hover:opacity-100': !isHideLeft,
+      }"
+      class="absolute left-5 md:left-6 top-1/2 -mt-5 md:-mt-6 opacity-0"
+    >
+      <ArrowSmallLeftIcon class="w-5 h-5 md:w-6 md:h-6" />
+    </IconButton>
+    <IconButton
+      @click="right"
+      :class="{
+        'pointer-events-none': isHideRight,
+        'group-hover:opacity-100': !isHideRight,
+      }"
+      class="absolute right-5 md:right-6 top-1/2 -mt-5 md:-mt-6 opacity-0"
+    >
+      <ArrowSmallRightIcon class="w-5 h-5 md:w-6 md:h-6" />
+    </IconButton>
+  </div>
+</template>
+
+<style>
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+</style>

@@ -3,9 +3,11 @@ export type Slide = {
   alt: string;
 };
 
-export const useSliderNavigation = (slides: Slide[]) => {
+export const useSliderNavigation = (slides: Slide[], index?: number) => {
   const slidesLength = slides.length;
-  const currentIndex = ref(0);
+  const isShowSlider = slidesLength !== 0;
+  const isShowNavigation = slidesLength > 1;
+  const currentIndex = ref(index ?? 0);
 
   const nextIndex = computed(() => (currentIndex.value + 1) % slidesLength);
   const prevIndex = computed(
@@ -21,6 +23,17 @@ export const useSliderNavigation = (slides: Slide[]) => {
   };
 
   const currentSlideItem = computed(() => slides[currentIndex.value]);
+  const setActiveIndex = (index: number) => {
+    currentIndex.value = index;
+  };
 
-  return { currentSlideItem, prev, next };
+  return {
+    currentIndex,
+    currentSlideItem,
+    isShowSlider,
+    isShowNavigation,
+    prev,
+    next,
+    setActiveIndex,
+  };
 };
