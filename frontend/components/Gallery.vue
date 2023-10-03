@@ -28,6 +28,18 @@ const galleryList = [
     src: "https://images.unsplash.com/photo-1582761370934-3e7a1cb2be33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80",
     alt: "Alt 7",
   },
+  {
+    src: "https://images.unsplash.com/photo-1505937059382-aab581fd88c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80",
+    alt: "Alt 8",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1559627755-42212e5c5fdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2307&q=80",
+    alt: "Alt 9",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1459745930869-b3d0d72c3cbb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80",
+    alt: "Alt 10",
+  },
 ];
 </script>
 

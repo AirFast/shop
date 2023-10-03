@@ -4,7 +4,7 @@ import {
   ArrowSmallRightIcon,
 } from "@heroicons/vue/24/solid";
 
-const { items, activeIndex, setActiveIndex } = defineProps<{
+const props = defineProps<{
   items: Slide[];
   activeIndex?: number;
   setActiveIndex: (index: number) => void;
@@ -26,44 +26,54 @@ const buttonVisibility = () => {
   }
 };
 
+const scrollTo = (left: number) => {
+  carrousel.value?.scrollTo({ left });
+  setTimeout(() => buttonVisibility(), 700);
+};
+
 const left = () => {
   if (carrousel.value && carrouselItem.value) {
     const left =
       carrousel.value.scrollLeft - carrouselItem.value[1].clientWidth * 2;
 
-    carrousel.value.scrollTo({
-      left,
-      behavior: "smooth",
-    });
-
-    setTimeout(() => buttonVisibility(), 600);
+    scrollTo(left);
   }
 };
 
 const right = () => {
   if (carrousel.value && carrouselItem.value) {
     const left =
-      carrousel.value.scrollLeft + carrouselItem.value[1].clientWidth * 2;
+      carrousel.value.scrollLeft + carrouselItem.value[0].clientWidth * 2;
 
-    carrousel.value.scrollTo({
-      left,
-      behavior: "smooth",
-    });
+    scrollTo(left);
+  }
+};
 
-    setTimeout(() => buttonVisibility(), 600);
+const scrollToActiveItem = (index: number) => {
+  if (carrousel.value && carrouselItem.value) {
+    const left = --index * carrouselItem.value[0].clientWidth;
+
+    scrollTo(left);
   }
 };
 
 onMounted(() => {
   setTimeout(() => buttonVisibility(), 100);
 });
+
+watch(
+  () => props.activeIndex,
+  (index) => {
+    scrollToActiveItem(index as number);
+  }
+);
 </script>
 
 <template>
   <div class="relative group">
     <div
       ref="carrousel"
-      class="flex gap-2 snap-x snap-mandatory overflow-x-auto no-scrollbar"
+      class="flex gap-2 snap-x snap-mandatory overflow-x-auto scroll-smooth no-scrollbar"
     >
       <div
         v-for="(item, index) in items"
