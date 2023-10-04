@@ -10,4 +10,13 @@ export default {
     home: "Home",
     products: "Products",
   },
+  price: {
+    youSave: "You save",
+    inStock: "In stock",
+    outStock: "Out of stock",
+  },
+  rating: {
+    outOf: "out of",
+    reviews: "No reviews | One review | {n} reviews",
+  },
 };

@@ -10,4 +10,13 @@ export default {
     home: "Головна",
     products: "Продукція",
   },
+  price: {
+    youSave: "Ви заощаджуєте",
+    inStock: "Є в наявності",
+    outStock: "Немає в наявності",
+  },
+  rating: {
+    outOf: "з",
+    reviews: "Відгуків немає | Один відгук | {n} відгука | {n} відгуків",
+  },
 };

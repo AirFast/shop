@@ -81,13 +81,13 @@ watch(
         ref="carrouselItem"
         @click="setActiveIndex(index)"
         :class="{ 'after:opacity-100': index === activeIndex }"
-        class="relative p-2 snap-center shrink-0 cursor-pointer hover:after:opacity-100 after:duration-200 after:opacity-0 after:border-2 after:border-green-500 after:top-0 after:left-0 after:absolute after:w-48 after:h-36 after:rounded-2xl"
+        class="relative p-2 snap-center shrink-0 cursor-pointer hover:after:opacity-100 after:duration-200 after:opacity-0 after:border-2 after:border-green-500 after:top-0 after:left-0 after:absolute after:w-40 after:h-28 md:after:w-48 md:after:h-36 lg:after:w-44 lg:after:h-32 xl:after:w-48 xl:after:h-36 after:rounded-2xl"
       >
         <NuxtImg
           :src="item.src"
           :alt="item.alt"
           loading="lazy"
-          class="w-44 h-32 rounded-lg object-cover"
+          class="w-36 h-24 md:w-44 md:h-32 lg:w-40 lg:h-28 xl:w-44 xl:h-32 rounded-lg object-cover"
         />
       </div>
     </div>

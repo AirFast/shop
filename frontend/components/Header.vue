@@ -56,7 +56,7 @@ const goBack = () => {
   </ul>
 </template>
 
-<style>
+<style scoped>
 .router-link-active {
   @apply text-green-500;
 }

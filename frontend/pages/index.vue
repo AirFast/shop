@@ -7,7 +7,10 @@
     </div>
     <div class="grid gap-6 md:gap-7 md:text-lg">
       <h1 class="text-4xl font-bold">Home page</h1>
-      <Price />
+      <Rating :rating="4.42" :reviews="1" />
+      <Price :inStock="10" />
+      <ShortDescription />
+
       <div class="flex gap-4">
         <Button variant="action">Add to cart</Button>
         <Button>Save</Button>
