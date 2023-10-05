@@ -17,6 +17,6 @@ export default {
   },
   rating: {
     outOf: "out of",
-    reviews: "No reviews | One review | {n} reviews",
+    reviews: "No reviews | {n} review | {n} reviews",
   },
 };
