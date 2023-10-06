@@ -16,6 +16,7 @@ export default {
     outStock: "Out of stock",
   },
   rating: {
+    yourRating: 'Your rating',
     outOf: "out of",
     reviews: "No reviews | {n} review | {n} reviews",
   },

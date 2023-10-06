@@ -16,6 +16,7 @@ export default {
     outStock: "Немає в наявності",
   },
   rating: {
+    yourRating: "Ваша оцінка",
     outOf: "з",
     reviews: "Відгуків немає | {n} відгук | {n} відгука | {n} відгуків",
   },
