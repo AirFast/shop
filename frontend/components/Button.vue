@@ -20,7 +20,7 @@ const isAction = computed(() => variant === "action");
       'hover:text-green-500 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700':
         !isAction,
     }"
-    class="transition-all px-9 py-3 rounded-full font-semibold ring-1 ring-indigo-500/5 shadow-md"
+    class="transition-all px-6 py-3 md:px-9 rounded-full text-sm md:text-base font-semibold ring-1 ring-indigo-500/5 shadow-md"
   >
     <slot />
   </button>
