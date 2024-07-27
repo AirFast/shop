@@ -1,4 +1,3 @@
-import { Ref } from "vue";
 import { useDark, useToggle } from "@vueuse/core";
 
 export type ThemeComposition = {

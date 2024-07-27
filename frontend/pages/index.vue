@@ -1,10 +1,7 @@
 <template>
   <div class="grid lg:grid-cols-2 gap-12">
-    <div>
-      <div class="sticky top-12 grid gap-4">
-        <Gallery />
-      </div>
-    </div>
+    <Gallery />
+
     <div class="grid gap-6 md:gap-7 md:text-lg">
       <h1 class="text-4xl font-bold">Home page</h1>
       <Rating :rating="4.42" :reviews="51" />

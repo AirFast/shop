@@ -1,5 +1,5 @@
 export default defineI18nConfig(() => ({
-  legacy: false,
+  legacy: true,
   pluralRules: {
     uk: function (choice, choicesLength) {
       if (choice === 0) {

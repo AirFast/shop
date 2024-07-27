@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: false },
+  compatibilityDate: "2024-07-27",
+  devtools: {
+    enabled: false,
+  },
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/i18n", "@nuxt/image"],
   i18n: {
     locales: [

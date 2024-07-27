@@ -44,5 +44,9 @@ const galleryList = [
 </script>
 
 <template>
-  <Slider :slides="galleryList" />
+  <div>
+    <div class="sticky top-12 grid gap-4">
+      <Slider :slides="galleryList" />
+    </div>
+  </div>
 </template>
