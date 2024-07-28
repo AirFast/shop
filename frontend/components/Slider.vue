@@ -78,11 +78,15 @@ const close = () => (isOpen.value = false);
 
     <template #placeholder>
       <SkeletonLoader class="rounded-lg aspect-[6/4]">
-        <PhotoIcon class="w-12 h-12" />
+        <PhotoIcon class="w-16 h-16" />
       </SkeletonLoader>
 
       <div class="relative flex gap-2 overflow-x-hidden">
-        <div v-for="item in 4" :key="item" class="p-2">
+        <div
+          v-for="item in 4"
+          :key="item"
+          class="relative p-2 first:after:opacity-100 after:opacity-0 after:border-2 after:border-slate-200 dark:after:border-slate-800 after:top-0 after:left-0 after:absolute after:w-40 after:h-28 md:after:w-48 md:after:h-36 lg:after:w-44 lg:after:h-32 xl:after:w-48 xl:after:h-36 after:rounded-2xl"
+        >
           <SkeletonLoader
             class="w-36 h-24 md:w-44 md:h-32 lg:w-40 lg:h-28 xl:w-44 xl:h-32 rounded-lg"
           >

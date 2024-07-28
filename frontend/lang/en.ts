@@ -1,6 +1,7 @@
 export default {
   en: "English",
   uk: "Ukrainian",
+  loader: "Loading...",
   switchTo: "Switch to",
   lightMode: "light mode",
   darkMode: "dark mode",
@@ -16,7 +17,7 @@ export default {
     outStock: "Out of stock",
   },
   rating: {
-    yourRating: 'Your rating',
+    yourRating: "Your rating",
     outOf: "out of",
     reviews: "No reviews | {n} review | {n} reviews",
   },

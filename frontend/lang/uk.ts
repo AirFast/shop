@@ -1,6 +1,7 @@
 export default {
   en: "Англійську",
   uk: "Українська",
+  loader: "Завантаження...",
   switchTo: "Перемкнутися на",
   lightMode: "світлий режим",
   darkMode: "темний режим",
