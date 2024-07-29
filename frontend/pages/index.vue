@@ -5,7 +5,7 @@
     <div class="grid gap-6 md:gap-7 md:text-lg">
       <h1 class="text-4xl font-bold">Home page</h1>
       <Rating :rating="4.42" :reviews="51" />
-      <Price :price="131.2" :discount="40" :inStock="10" />
+      <Price :price="131.2" :discount="20" :inStock="10" />
       <ShortDescription />
 
       <div class="flex gap-4">
