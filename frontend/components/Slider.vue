@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {
-  ArrowSmallLeftIcon,
-  ArrowSmallRightIcon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
   ArrowsPointingOutIcon,
 } from "@heroicons/vue/24/solid";
 import { PhotoIcon } from "@heroicons/vue/24/outline";
@@ -43,14 +43,14 @@ const close = () => (isOpen.value = false);
           class="absolute left-5 md:left-6 top-1/2 -mt-5 md:-mt-6 opacity-0 group-hover:opacity-100"
           @click="prev"
         >
-          <ArrowSmallLeftIcon class="w-5 h-5 md:w-6 md:h-6" />
+          <ArrowLeftIcon class="w-4 h-4 md:w-5 md:h-5" />
         </IconButton>
         <IconButton
           v-if="isShowNavigation"
           class="absolute right-5 md:right-6 top-1/2 -mt-5 md:-mt-6 opacity-0 group-hover:opacity-100"
           @click="next"
         >
-          <ArrowSmallRightIcon class="w-5 h-5 md:w-6 md:h-6" />
+          <ArrowRightIcon class="w-4 h-4 md:w-5 md:h-5" />
         </IconButton>
         <IconButton
           class="absolute right-5 md:right-6 bottom-5 md:bottom-6 opacity-0 group-hover:opacity-100"

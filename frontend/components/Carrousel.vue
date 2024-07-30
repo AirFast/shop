@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {
-  ArrowSmallLeftIcon,
-  ArrowSmallRightIcon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
 } from "@heroicons/vue/24/solid";
 
 const props = defineProps<{
@@ -99,7 +99,7 @@ watch(
       }"
       class="absolute left-5 md:left-6 top-1/2 -mt-5 md:-mt-6 opacity-0"
     >
-      <ArrowSmallLeftIcon class="w-5 h-5 md:w-6 md:h-6" />
+      <ArrowLeftIcon class="w-4 h-4 md:w-5 md:h-5" />
     </IconButton>
     <IconButton
       @click="right"
@@ -109,7 +109,7 @@ watch(
       }"
       class="absolute right-5 md:right-6 top-1/2 -mt-5 md:-mt-6 opacity-0"
     >
-      <ArrowSmallRightIcon class="w-5 h-5 md:w-6 md:h-6" />
+      <ArrowRightIcon class="w-4 h-4 md:w-5 md:h-5" />
     </IconButton>
   </div>
 </template>

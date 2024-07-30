@@ -16,7 +16,7 @@ const discountedPrice = computed(() => props.price - discountAmount.value);
 </script>
 
 <template>
-  <div class="flex gap-6 md:gap-7 flex-wrap items-end justify-between">
+  <div class="flex gap-6 md:gap-7 flex-wrap items-center justify-between">
     <div>
       <p class="flex gap-2 items-baseline font-bold text-lg text-green-500">
         ${{ discountedPrice.toFixed(2) }}

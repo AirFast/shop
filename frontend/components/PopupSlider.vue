@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {
   ArrowsPointingInIcon,
-  ArrowSmallLeftIcon,
-  ArrowSmallRightIcon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
 } from "@heroicons/vue/24/solid";
 
 const { slides, activeIndex, close } = defineProps<{
@@ -34,14 +34,14 @@ const { currentSlideItem, isShowNavigation, prev, next } = useSliderNavigation(
       class="absolute left-6 top-1/2 -mt-5 md:-mt-6 opacity-0 group-hover:opacity-100"
       @click="prev"
     >
-      <ArrowSmallLeftIcon class="w-5 h-5 md:w-6 md:h-6" />
+      <ArrowLeftIcon class="w-4 h-4 md:w-5 md:h-5" />
     </IconButton>
     <IconButton
       v-if="isShowNavigation"
       class="absolute right-6 top-1/2 -mt-5 md:-mt-6 opacity-0 group-hover:opacity-100"
       @click="next"
     >
-      <ArrowSmallRightIcon class="w-5 h-5 md:w-6 md:h-6" />
+      <ArrowRightIcon class="w-4 h-4 md:w-5 md:h-5" />
     </IconButton>
     <IconButton
       class="absolute right-6 top-6 opacity-0 group-hover:opacity-100"
